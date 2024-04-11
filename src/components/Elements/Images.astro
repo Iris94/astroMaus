@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+    source: any,
+    description?: string,
+    maxHeight?: string,
+    objectPosition?: string,
+}
+
+const {
+    source,
+    description = '/',
+    maxHeight = '43vw', 
+} = Astro.props as Props;
+---
+
+<Image 
+    src={source}
+    alt={description}
+    style={{ maxHeight: maxHeight, width: '100%', objectFit: 'cover'}}
+/>
+
+
+
+
+
+
+
+

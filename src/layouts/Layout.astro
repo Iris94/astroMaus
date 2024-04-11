@@ -1,51 +1,54 @@
 ---
+import Header from '../components/Blocks/Header.astro';
+
 interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = 'Maus LMS' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image" href="/src/assets/mausLogo" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="min-h-screen relative">
+		<Header />
 		<slot />
 	</body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
+	@font-face {
+        font-family: 'Borna';
+        src: url('/fonts/borna-medium-webfont.ttf') format('truetype');
+    }
+
+	@font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+    }
+
+	.poppins {font-family: Poppins, sans-serif;}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: Borna, sans-serif;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+	h1 {	font-size: clamp(35px, 5vw, 150px);}
+	h2 {	font-size: clamp(25px, 3.5vw, 130px);}
+	h3 {	font-size: clamp(20px, 3vw,	110px);}
+	h4 {	font-size: clamp(17.5px, 2.5vw, 90px);}
+	h5 {	font-size: clamp(15px, 2.25vw, 75px);}
+	p,a,li {	font-size: clamp(12px, 1.5vw, 50px)}
+	button {font-size: clamp(10px, 1.4vw, 45px)}
+	hr {	height: 0.25vw}
+
 </style>

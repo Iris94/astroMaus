@@ -1,0 +1,56 @@
+---
+    import H3 from '../Elements/H3.astro';
+    import CompanyCard from '../Blocks/CompanyCard.astro';
+    import { Azure, Umbraco, Ios, Net, Angular, Google } from '../../exports/CompanyExport.astro';
+    import companies from '../../companies.json';
+---
+
+<section class="bg-maus_light_mix lg:px-24 lg:py-12 flex flex-col lg:gap-5
+                md:px-16 p-6 ">
+    <div class="flex justify-center items-center text-center p-5">
+        <H3
+            width="lg:w-4/5"
+            color="text-maus_blue_text"
+            text="In partnership with our customers, we transform composable technologies and future-proof architectures. We build the change."
+        />
+    </div>
+
+    <div class="md:grid grid-cols-3 md:gap-10
+                flex overflow-x-auto gap-2">
+        {companies.map((company, index) => {
+            let correctCompanyImage;
+            switch (company.image) {
+                case 'Azure':
+                    correctCompanyImage = Azure;
+                    break;
+                case 'Umbraco':
+                    correctCompanyImage = Umbraco;
+                    break;
+                case 'Ios':
+                    correctCompanyImage = Ios;
+                    break;
+                case 'Net':
+                    correctCompanyImage = Net;
+                    break;
+                case 'Angular':
+                    correctCompanyImage = Angular;
+                    break;
+                case 'Google':
+                    correctCompanyImage = Google;
+                    break;
+                default:
+                    correctCompanyImage = null;
+            }
+
+            return (
+                <CompanyCard
+                    image={correctCompanyImage}
+                    title={company.title}
+                    text={company.text}
+                />
+            );
+        })}
+    </div>
+</section>
+
+

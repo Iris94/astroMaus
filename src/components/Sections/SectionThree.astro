@@ -1,0 +1,61 @@
+---
+import Images from "../Elements/Images.astro"
+import Paragraph from "../Elements/Paragraph.astro"
+import H3 from "../Elements/H3.astro"
+import Listing from "../Elements/Listing.astro"
+
+import ImageOne from "../../assets/support.jpg"
+import ImageTwo from "../../assets/paying.jpg"
+---
+
+<section class="md:grid grid-cols-2 flex flex-col bg-maus_green_bg">
+    <div class="pl-24 pr-6 flex flex-col justify-center lg:gap-5
+                max-md:px-6 max-md:py-16 max-md:order-1 max-sm:text-center">
+        <H3
+        width="lg:w-2/3"
+        color="text-maus_blue_text"
+        text="Overview and easy administration"/>
+        <Paragraph
+        width="lg:w-4/5"
+        color="text-maus_dark_text"
+        text="In the learning universe, it is possible for HR employees or others to draw reports and see statistics on the company's percentage completion, as well as when the employees have to complete the next course." />
+    </div> 
+
+    <div class="max-md:order-2">
+        <Images 
+        source={ImageOne}
+        />
+    </div>
+   
+    <div class="max-md:order-4">
+        <Images 
+        source={ImageTwo}
+        />
+    </div>
+
+    <div class="pr-24 pl-12 flex flex-col justify-center lg:gap-5
+                max-md:px-6 max-md:py-16 max-md:order-3 max-sm:text-center">
+        <H3 
+        color="text-maus_blue_text"
+        text="You only pay per employee."/>
+        <ul class="list-disc">
+            <Listing 
+            text="The employees get access to theory,  video and quizzes on the platform"
+            color="text-maus_dark_text" />
+            <Listing 
+            text="We handle booking and attendance registration for you"
+            color="text-maus_dark_text" />
+            <Listing 
+            text="You have an overview of who has participated"
+            color="text-maus_dark_text" />
+            <Listing 
+            text="Employees automatically receive their certificate after the course"
+            color="text-maus_dark_text" />
+        </ul>
+    </div>
+</section>
+
+
+
+
+

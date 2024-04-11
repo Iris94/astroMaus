@@ -1,0 +1,22 @@
+---
+interface Props {
+    text: string,
+    color?: string,
+    height?: string,
+    weight?: string,
+    width?: string,
+}
+
+const {
+    text,
+    color = 'text-white',
+    height = 'leading-snug',
+    weight = 'font-semibold',
+    width = 'w-full'
+} = Astro.props;
+---
+
+<h3
+    class=`${color} ${height} ${weight} ${width}`>
+    {text}
+</h3>

@@ -1,0 +1,48 @@
+---
+import Images from "../Elements/Images.astro"
+import Paragraph from "../Elements/Paragraph.astro"
+import H3 from "../Elements/H3.astro"
+
+import Keynote from "../../assets/sectionThreeSpeaker.png"
+import Paper from "../../assets/sectionThreeTickets.png"
+---
+
+
+<section class="px-6 md:px-16 lg:px-24 py-6 md:py-12 md:grid grid-cols-2
+                flex flex-col">
+    <div class="flex flex-col justify-center lg:gap-5 lg:pr-12
+                max-md:py-6 max-md:text-center max-md:order-1">
+        <H3
+        width="lg:w-1/2"
+        color="text-maus_blue_text"
+        text="Course content management"/>
+        <Paragraph
+        width="lg:w-4/5"
+        color="text-maus_dark_text"
+        text="run.events enables speakers to manage their biographies and profiles centrally, making it easier to use at all events where they submit their content." />
+    </div> 
+
+    <div class="max-md:order-2">
+        <Images 
+        source={Keynote}
+        />
+    </div>
+   
+    <div class="max-md:order-4">
+        <Images 
+        source={Paper}
+        />
+    </div>
+
+    <div class="lg:pl-12 flex flex-col justify-center lg:gap-5
+                max-md:py-6 max-md:text-center max-md:order-3">
+        <H3
+        width="lg:w-2/3"
+        color="text-maus_blue_text"
+        text="Report and tracking"/>
+        <Paragraph
+        width="lg:w-4/5"
+        color="text-maus_dark_text"
+        text="Configure event tickets with ease using run.events. Offer various ticket types, add-ons, and options, customize tickets, dynamic pricing, and manage taxes" />
+    </div>
+</section>

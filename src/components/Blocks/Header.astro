@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Maus from "../../assets/mausLogo.png";
+
+const navigation = {
+        "Product"   :   "/",
+        "Examples"  :   "/Examples",
+        "Resources" :   "/Resources",
+        "Pricing"   :   "/Pricing",
+        "Help"      :   "Help"
+}
+---
+
+<header class="bg-maus_blue_bg px-3 md:px-16 lg:px-24 pt-4 flex items-end">
+    <nav class="w-full flex justify-between gap-5 lg:gap-0"> 
+
+        <div class="flex items-end order-1"> 
+            <Image src={Maus} alt="Maus" class="MAUS"/>
+            <p class="text-maus_green_text font-bold LMS">LMS</p>
+        </div>
+
+        <div class="flex lg:w-full justify-end items-center my-auto order-3 lg:order-2"> 
+            <div class="lg:flex hidden gap-5 pr-7 uppercase">
+                {Object.entries(navigation).map(([name, url]) => (
+                    <ul class="text-white font-medium">
+                        <li class="hover:text-zinc-200"><a href={url}>{name}</a></li> 
+                    </ul>
+                ))}
+            </div>
+
+            <div id="openNav" class="lg:hidden cursor-pointer">
+                <Icon name="mdi:menu" id="navMenu" class="hover:text-zinc-200" />
+                <Icon name="mdi:close" id="navClose" class="hover:text-zinc-200 hidden" />           
+            </div>
+        </div>
+
+        <div class="flex md:w-1/5 items-center justify-end ml-auto order-2 lg:order-3 uppercase">
+            <button 
+            class="bg-maus_green_btn text-white px-1 md:px-3 py-1 text-center font-medium rounded-md
+                    hover:bg-green-300 h-fit">Start for free</button>
+        </div>
+    </nav>
+</header>
+
+<section id="mobile" class="bg-maus_blue_bg w-full h-screen hidden px-6 py-12">
+    <div class="flex flex-col gap-2">
+        {Object.entries(navigation).map(([name, url]) => (
+            <ul class="text-white">
+                <li class="hover:text-zinc-200"><a href={url}>{name}</a></li> 
+            </ul>
+        ))}
+    </div>
+</section>
+
+
+
+
+<style>
+    [Data-Icon] {   font-size: clamp(20px, 7vw, 40px); color: white;}
+    .MAUS       {   width: clamp(70px, 8vw, 250px);}
+    .LMS        {   font-size: clamp(22.5px, 2.75vw, 150px);}
+</style>
+
+
+
+
+
+<script>
+    import { isMobileOpen } from "./navigation"
+    const section = document.getElementById("mobile");
+    const body = document.querySelector('body');
+    const navMenu = document.getElementById('navMenu');
+    const navClose = document.getElementById('navClose')
+
+    function toggleMobileNav() {
+        const isOpen = isMobileOpen.get();
+
+        if (!isOpen) {
+            section?.classList.remove("hidden");
+            section?.classList.add("flex");
+            body?.classList.add('overflow-hidden');
+            navMenu?.classList.add('hidden');
+            navClose?.classList.remove('hidden');
+        } else {
+            section?.classList.add("hidden");
+            section?.classList.remove("flex");
+            body?.classList.remove('overflow-hidden');
+            navMenu?.classList.remove('hidden');
+            navClose?.classList.add('hidden');
+        }
+
+        isMobileOpen.set(!isOpen);
+    }
+
+    document.getElementById('openNav')?.addEventListener('click', toggleMobileNav);
+</script>
+
+
+

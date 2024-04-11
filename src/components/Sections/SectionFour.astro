@@ -1,0 +1,25 @@
+---
+import Paragraph from "../Elements/Paragraph.astro";
+import H3 from "../Elements/H3.astro";
+import Images from "../Elements/Images.astro";
+
+import Laptop from "../../assets/sectionThreeLaptopImg.png"
+---
+
+
+<section class="flex justify-normal items-end text">
+    <div class="z-0 w-full relative">
+        <Images 
+        source={Laptop}/>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+    </div>
+    <div class="lg:px-24 lg:py-16 lg:w-2/3 flex flex-col lg:gap-5 z-10 absolute
+                p-6 w-full">
+        <H3
+        width="lg:w-5/6"
+        text="Create, import and manage all your courses in UMBRACO CMS"/>
+        <Paragraph
+        width="lg:w-4/6"
+        text="Event badges require careful consideration in terms of design, printing method, and customization. run.events provides event organizers with the flexibility to choose the most suitable approach for their needs." />
+    </div>
+</section>

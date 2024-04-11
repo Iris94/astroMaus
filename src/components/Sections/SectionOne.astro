@@ -1,0 +1,42 @@
+---
+import H1 from "../Elements/H1.astro"
+import H2 from "../Elements/H2.astro";
+import Paragraph from "../Elements/Paragraph.astro"
+import Images from "../Elements/Images.astro";
+import Button from "../Elements/Button.astro";
+
+import HeroPicture from '../../assets/section1.png';
+---
+
+<section class=`pl-6 lg:pl-24 md:pl-16 lg:pb-16 md:pb-12 pb-16 lg:pt-28 md:pt-16 pt-6 flex flex-col bg-maus_blue_bg`>
+
+    <div class="flex flex-col lg:w-2/3 pb-5 lg:pb-20">
+        <H1 text="Share what you know"/>
+        <p class="text-white font-medium">
+            <span class="text-maus_green_text">
+                MAUSLMS
+            </span> helps creators engage their online audiences and get paid on their own terms with courses, coaching, and downloadable content.
+        </p>
+    </div>
+    
+    <Images
+    source={HeroPicture} />
+
+    <div class="flex flex-col gap-1 lg:gap-5 py-5 lg:pt-20 lg:w-2/3 justify-between">
+        <H2 text="Course & Content Management"/>
+        <div class="w-2/3 poppins">
+            <Paragraph text="With the MAUSLMS course creator and learning module builder, creating content becomes an easy and simple task"/>
+        </div>
+    </div>
+
+    <Button 
+    text="Start for free"
+    />
+</section>
+
+<style>
+	p  {	font-size: clamp(14px, 2.2vw, 65px)}
+</style>
+
+
+

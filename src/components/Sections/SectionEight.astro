@@ -1,0 +1,69 @@
+---
+import H2 from "../Elements/H2.astro"
+import Paragraph from "../Elements/Paragraph.astro"
+import Button from "../Elements/Button.astro"
+import Line from "../Elements/Line.astro"
+---
+
+
+<section class="bg-maus_blue_bg px-1 lg:px-24 pt-12 pb-20 flex flex-col relative gap-10">
+    <div class="flex flex-col justify-center items-center text-center gap-5 lg:gap-7">
+        <div class="flex flex-col justify-center items-center text-center">
+            <H2 
+            text="HAVE A PROJECT IN MIND?" />
+            <H2
+            text="LETS GET TO WORK." />
+        </div>
+        <Button 
+        text="START FOR FREE" />
+        <div class="flex flex-col justify-center items-center text-center poppins">
+            <Paragraph 
+            text="We are the Team You Need." />
+            <p class="text-white">Give us a call. Send us an <span class="text-maus_gold_text">e-mail</span>.</p>
+        </div>
+    </div>
+
+    <Line 
+    color="bg-maus_hr_bg_dark" />
+
+    <div class="flex justify-around">
+        <div class="text-white flex flex-col gap-6 items-center">
+            <h5 class="font-medium">Call or write to us</h5>
+            <p class="poppins">hello@maus.ba</p>
+            <p class="poppins">061 / 449 942</p>
+        </div>
+
+        <div class="text-white flex flex-col gap-6 text-center">
+            <h5 class="font-medium">OUR ADDRESS</h5>
+            <ul class="poppins">
+                <li>“MAUS” d.o.o. </li>
+                <li>71000 Sarajevo</li>
+                <li>Radenka Abazovica 2a</li>
+                <li>Bosnia and Herzegovina</li>
+                <li>ID:4202460140001</li>
+            </ul>
+        </div>
+
+        <div class="text-white flex flex-col gap-6 text-center">
+            <h5 class="font-medium">We are social</h5>
+            <ul class="poppins">
+                <li><a href="/">Linkedin</a></li>
+                <li><a href="/">Facebook</a></li>
+                <li><a href="/">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <Line 
+    color="bg-maus_hr_bg_dark" />
+
+    <footer class="flex justify-between">
+        <div class="text-white poppins">
+            <p>© 2021 by MAUS d.o.o. All rights reserved.</p>
+        </div>
+    
+        <div class="text-white poppins">
+            <p>Cookie-politik</p>
+        </div>
+    </footer>
+</section>
